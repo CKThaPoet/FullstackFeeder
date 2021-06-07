@@ -11,15 +11,26 @@ public class Converter {
 
   /*
    * start a public access modifier making it globally available so the JVM can
-   * invoke the main method outside the class, use the static keyword so the JVM
-   * can invoke the main method outside, also use void because the main method
-   * isnt returning anything name the method main and inside the method
-   * paramenters use Strings[] args it is a string array of arguments
+   * invoke the main method outside the class, use the static keyword so it can
+   * access before any objects of its class are created, and without reference to
+   * any object, also use void because the main method isnt returning anything
+   * name the method main and inside the method paramenters use Strings[] args it
+   * is a string array of arguments
    */
   public static void main(String[] args) {
 
     // create variable int called menuSelection = 0
     int menuSelection = 0;
+
+    // use these below to add a a new line for the menu
+    // For UNIX/Linux/New Mac-based OS use \n as a new line
+    // For old Mac-based OS use \r as a carriage return
+    // For use Windows-based OS use \r\n
+    /*
+     * For code to be platform independent use the method System.lineSeparator()
+     * this will return the system-dependent line separator string can be initilized
+     * as a string literal
+     */
 
     /*
      * Declare a string literal for System.lineSeparator(), place this method into a
@@ -33,16 +44,6 @@ public class Converter {
      * inside the parameter
      */
 
-    // use these below to add a a new line for the menu
-    // For UNIX/Linux/New Mac-based OS use \n as a new line
-    // For old Mac-based OS use \r as a carriage return
-    // For use Windows-based OS use \r\n
-    /*
-     * For code to be platform independent use the method System.lineSeparator()
-     * this will return the system-dependent line separator string can be initilized
-     * as a string literal
-     */
-
     while (menuSelection != 5) {
       System.out
           .println("Select an option to Converted:" + newL + "1. Cups to Teaspoons" + newL + "2. Miles to Kilometers"
@@ -51,7 +52,7 @@ public class Converter {
       /*
        * use new keyword to to instantiate an object for the scanner we are using a
        * string object because because the JVM will be forced to a create a new string
-       * reference ever time the variableName is already in use
+       * reference every time the variableName is already in use
        */
 
       // Example of how to an initialize an object to use the scanner
@@ -84,15 +85,15 @@ public class Converter {
       // Must have default at some point
       // Use .nextDATATYPE method with the variable name for the scanner
       /*
-       * Use nextLine() method so the class advances this scans past the current line
-       * and returns the input that was skipped. This function prints the rest of the
-       * current line, leaving out the line separator at the end. The next is set to
-       * after the line separator
+       * Use nextLine() method with strings so the class advances this scans past the
+       * current line and returns the input that was skipped. This function prints the
+       * rest of the current line, leaving out the line separator at the end. The next
+       * is set to after the line separator
        */
       /*
-       * Use nextInt() method so the class scans the next token of the input as a Int.
-       * If the translation is successful, the scanner advances past the input that
-       * matched
+       * Use nextInt() method with whole numbers so the class scans the next token of
+       * the input as a Int. If the translation is successful, the scanner advances
+       * past the input that matched
        */
 
       /*
@@ -102,17 +103,18 @@ public class Converter {
       // For each case
       /*
        * Start with printing the variableName for the initalized string statement we
-       * will ask the user
+       * will ask from the user
        */
       // Example System.out.println(introStatement)
       /*
-       * Have the vaiable name for the value we will enter into the scanner = to
+       * Have the variableName for the value we will enter into the scanner = to
        * scannerName.nextInt() or scannerName.nextLine() for string returns
        */
       // Example value = enterField.nextInt()
       /*
        * Have the declared variableName for the conversion formula = the variableName
-       * for the value we get from the scanner then the conversion formula itself
+       * for the value we get from the user using the scanner then the conversion
+       * formula itself
        */
       // Example converted = value / 48f
       /*
@@ -120,7 +122,7 @@ public class Converter {
        * the values needed to complete
        */
       /*
-       * Example System.out.println(value + " teaspoons equals " + converted +
+       * Example System.out.println(value +" teaspoons equals " + converted +
        * " cups.")
        */
       /*
@@ -139,28 +141,28 @@ public class Converter {
           System.out.println(introStatement);
           value = enterField.nextInt();
           converted = value / 48f;
-          System.out.println(value + " teaspoons equals " + converted + " cups.");
+          System.out.println(value + " teaspoons equals " + converted + " cups");
           break;
         case 2:
           System.out.println(introStatement);
           value = enterField.nextInt();
           converted = value * 1.6f;
-          System.out.println(value + "miles equals" + converted + "kilometers");
+          System.out.println(value + " miles equals " + converted + " kilometers.");
           break;
         case 3:
           System.out.println(introStatement);
           value = enterField.nextInt();
           converted = value * 5280f;
-          System.out.println(value + "miles equals" + converted + "feet.");
+          System.out.println(value + " miles equals " + converted + " feet.");
           break;
         case 4:
           System.out.println(introStatement);
           value = enterField.nextInt();
           converted = value * .8326f;
-          System.out.println(value + " in US Gallons equals" + converted + "in Imperial Gallons.");
+          System.out.println(value + " in US Gallons equals " + converted + " in Imperial Gallons.");
           break;
         case 5:
-          System.out.println("You have exited the unit converter");
+          System.out.println("You have exited the Unit Converter");
           System.out.println("Thank you for using the Unit Converter");
           break;
         default:
