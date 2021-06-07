@@ -141,7 +141,7 @@ public class Converter {
           System.out.println(introStatement);
           value = enterField.nextInt();
           converted = value / 48f;
-          System.out.println(value + " teaspoons equals " + converted + " cups");
+          System.out.println(value + " teaspoons equals " + converted + " cups.");
           break;
         case 2:
           System.out.println(introStatement);
@@ -162,8 +162,8 @@ public class Converter {
           System.out.println(value + " in US Gallons equals " + converted + " in Imperial Gallons.");
           break;
         case 5:
-          System.out.println("You have exited the Unit Converter");
-          System.out.println("Thank you for using the Unit Converter");
+          System.out.println("You have exited the Unit Converter.");
+          System.out.println("Thank you for using the Unit Converter.");
           break;
         default:
           enterField.close();
